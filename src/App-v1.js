@@ -7,17 +7,6 @@ const messages = [
   'Invest your new income 🤑',
 ];
 
-function Button({ bgColor, textColor, onClick, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-}
-
 function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
@@ -31,9 +20,7 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(!isOpen)} className="close">
-        &times;
-      </button>
+      <button onClick={() => setIsOpen(!isOpen)} className='close'>&times;</button>
 
       {isOpen && (
         <div className="steps">
@@ -47,12 +34,18 @@ function App() {
           </p>
 
           <div className="buttons">
-            <Button bgColor='#7950f2' textColor='#fff' onClick={handlePrev}>
-              <span>👈</span> Previous
-            </Button>
-            <Button bgColor='#7950f2' textColor='#fff' onClick={handleNext}>
-              Next <span>👉</span>
-            </Button>
+            <button
+              onClick={handlePrev}
+              style={{ backgroundColor: '#7950f2', color: '#fff' }}
+            >
+              Previous
+            </button>
+            <button
+              onClick={handleNext}
+              style={{ backgroundColor: '#7950f2', color: '#fff' }}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
