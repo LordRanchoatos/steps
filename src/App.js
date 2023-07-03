@@ -17,6 +17,15 @@ function Button({ bgColor, textColor, onClick, children }) {
     </button>
   );
 }
+function stepMessage({ step, children }) {
+  return (
+    <div className="message">
+      <h3>step {step}</h3>
+      {children}
+    </div>
+  );
+}
+
 
 function App() {
   const [step, setStep] = useState(1);
@@ -42,15 +51,15 @@ function App() {
             <div className={step >= 2 ? 'active' : ''}>2</div>
             <div className={step >= 3 ? 'active' : ''}>3</div>
           </div>
-          <p className="message">
-            Step {step} : {messages[step - 1]}
-          </p>
+          <stepMessage step={step}>{messages[step - 1]}</stepMessage>
+
+          <stepMessage>{messages[step - 1]}</stepMessage>
 
           <div className="buttons">
-            <Button bgColor='#7950f2' textColor='#fff' onClick={handlePrev}>
+            <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrev}>
               <span>👈</span> Previous
             </Button>
-            <Button bgColor='#7950f2' textColor='#fff' onClick={handleNext}>
+            <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
               Next <span>👉</span>
             </Button>
           </div>
