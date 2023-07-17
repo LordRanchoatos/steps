@@ -59,6 +59,9 @@ function App() {
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrev}>
               <span>👈</span> Previous
             </Button>
+            {/* <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrev}>
+              <span>👈</span> Previous
+            </Button> */}
             <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
               Next <span>👉</span>
             </Button>
@@ -70,3 +73,5 @@ function App() {
 }
 
 export default App;
+
+//$2a$10$IFUHoSHqGYKcwJhzkBk1Wewbo9ZLCtnhUkGUqPkM54NzLR2DDYUcG
